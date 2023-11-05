@@ -129,7 +129,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    background-color: white;
+    background-color: gold;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding-top: 10px;

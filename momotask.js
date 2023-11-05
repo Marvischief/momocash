@@ -49,12 +49,8 @@ function updateSearchResults(query) {
 
   
 
-
-
-
-
 // user logic for adding points //
-// Initialize user points
+// Initialize user points 
 let userPoints = 0;
 
 // Function to update and display user points
@@ -88,6 +84,8 @@ function rewardPoints(activity) {
   // Display updated points
   updatePoints();
 }
+
+//logic for games
 
 // Function to reward points for time spent on the game
 function rewardPointsForGameTime() {
@@ -127,3 +125,45 @@ function rewardPointsForGameTime() {
 rewardPoints('playAd'); // Reward points for playing an ad
 rewardPoints('readArticle'); // Reward points for reading an article
 rewardPoints('playGame'); // Reward points for playing a game
+
+
+// article/ News logic
+let articleRead = false;
+
+// Event listener to track article reading
+window.addEventListener('scroll', () => {
+  if (!articleRead && isArticleFullyScrolled()) {
+    articleRead = true;
+    rewardPoints(5); // Reward points for reading an article
+  }
+});
+
+function isArticleFullyScrolled() {
+  const windowHeight = window.innerHeight; // Height of the user's viewport
+  const documentHeight = document.documentElement.scrollHeight; // Height of the entire document
+  const scrollPosition = window.scrollY; // Current scroll position
+
+  // Check if the user has scrolled to the end of the article
+  return windowHeight + scrollPosition >= documentHeight;
+}
+
+// ads logic 
+let adViewed = false;
+
+// Event listener to track ad viewing
+window.addEventListener('scroll', () => {
+  if (!adViewed && isAdFullyScrolled()) {
+    adViewed = true;
+    rewardPoints(1); // Reward points for viewing an ad
+  }
+});
+
+function isAdFullyScrolled() {
+  const windowHeight = window.innerHeight; // Height of the user's viewport
+  const adContainer = document.getElementById('ad-container'); // Assuming you have a specific container for the ad
+  const adContainerHeight = adContainer.clientHeight; // Height of the ad container
+  const scrollPosition = window.scrollY; // Current scroll position
+
+  // Check if the user has scrolled to the end of the ad container
+  return windowHeight + scrollPosition >= adContainer.offsetTop + adContainerHeight;
+}
