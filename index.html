@@ -1,144 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="google-adsense-account" content="ca-pub-9386303216025097">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Momo</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: "Helvetica Neue",Helvetica;
+            background-color: goldenrod;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            justify-content: center;
+            align-items: center;
+            color: white;
+
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            background-color: rgb(26 , 66, 96);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0 ,0.1);
+            width: 80%;
+            height: 80vh;
+            margin-top: 60px;
+        }
+
+        .container h2 {
+            text-align: center;
+        }
+
+        .container input[type="text"],
+        .container input[type="password"]{
+            width: 100%;
+            height: 30px;
+            padding: 5px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px; 
+        }
+
+        .container a[type="submit"]{
+            width: 50%;
+            padding: 10px;
+            background-color: #007BFF;
+            border: none;
+            text-align: center;
+            border-radius: 3px;
+            color: white;
+            cursor: pointer;
+            margin-bottom: -50px;
+            text-decoration: none;
+        }
+
+        .container a[type="submit"]:hover {
+            background-color: gold;
+        }
+        
+    </style>
 </head>
 <body>
-    <!--Head-->
-    <div>
-        <header>
-            <div class="first-header">
-                <img src="img/user.png" alt="">
-                <h4>Account</h4>
-            </div>
-            <div>
-                <img src="img/images-23-removebg-preview-1.png" alt="">
-            </div>
-            <div class="notification">
-                <img src="img/notification-2.png" alt="">
-                <h4>Approvals</h4>
-            </div>
+    <div class="container">
 
-        </header>
-    </div>
-
-    <!-- stats-->
-
-    <div class="main-carousel">
-        <div class="mobile-carousel">
-            <h4>Momo Coins</h4>
-            <div>
-                <img src="img/coin.png" alt="">
-                <h4>80.00</h4>
-                <img src="img/hide.png" alt="">
-            </div>
-            <div class="mobile-1">
-                <img src="img/transaction.png" alt="">
-                <h5>View Transactions</h5>
-            </div>
-        </div>
-
-        <div class="part-carousel">
-            <div class="part1">
-                <h3>PAY BILLS</h3>
-            </div>
-            <div class="part2">
-                <h3>TOP UP</h3>
-            </div>
-        </div>
-    </div>
-
-    <!--Options-->
-    <div class="options">
-        <div class="option-1">
-            <div>
-                <img src="img/lightbulb.png" alt="">
-                <h5>CIE</h5>
-            </div>
-            <hr>
-            <div>
-                <img src="img/light-bulb.png" alt="">
-                <h5>Prepaid CIE</h5>
-            </div>
-            <hr>
-            <div>
-                <img src="img/light-bulb.png" alt="">
-                <h5>SODECI</h5>
-            </div>
-
-        </div>
-
-        <div class="option-2">
-            <div>
-                <img src="img/lightbulb.png" alt="">
-                <h5>CIE</h5>
-            </div>
-            <hr>
-            <div>
-                <img src="img/light-bulb.png" alt="">
-                <h5>Prepaid CIE</h5>
-            </div>
-            <hr>
-            <div>
-                <img src="img/light-bulb.png" alt="">
-                <h5>SODECI</h5>
-            </div>
-
-        </div>
-
-        <!-- Section for promo-->
-        <h2>OFFERS & PROMO</h2>
-        <div class="offer">
-            <img src="img/MTN-We-Move.jpg" alt="">
-            <div class="offer-info">
-                <h5>Refer a friend and receive <span style="color: gold;">300mb</span></h5>
-                <h4>Get Offer</h4>
-            </div>
-        </div>
-
-        <!--main nav-->
-        <div class="footer-nav">
-            <div>
-                <img src="img/home.png" alt="">
-                <h4>Home</h4>
-            </div>
-            <div>
-                <img src="img/send.png" alt="">
-                <h4>Send</h4>
-            </div>
-
-            <div id="popup-link">
-                <img src="img/images-23-removebg-preview-1.png" style="width: 44px;" alt="">
-                <a id="popup-link" style="text-decoration: none; color: black;" href="#">MoMoCash</a>
-            </div>
+        <img src="img/images-23-removebg-preview-1.png" style=" margin-top:-40px; width: 64px; z-index: 1;" alt="">
+        <h2>Welcome to MoMo</h2>
+        <form action="" method="post">
+            <label for="username">MOMO username:</label><br>
+            <input type="text" id="username" name="username" required><br>
             
-            <div id="popup" class="popup hidden">
-                <div class="popup-content">
-                    <span id="close-popup" class="close-button">&times;</span>
-                    <div id="popup-div" >
-                        <div>Scan Qr</div>
-                        <div> <a href="momotask.html" style="text-decoration: none; color: black;">Momo Tasks</a></div>
-                        <div>Momo ID</div>
-                    </div>
-                </div>
-            </div>
-        
-            <div>
-                <img src="img/transaction.png" alt="">
-                <h4>Offers</h4>
-            </div>
-            <div>
-                <img src="img/coin.png" alt="">
-                <h4>Tarrifs</h4>
-            </div>
-        </div>
-    </div>
+            <label for="password">MOMO Password:</label><br>
+            <input type="password" id="password" name="password" required>
 
-    <script src="index.js"></script>
+        </form>
+
+        <a href="momomain.html" type="submit">Login</a>
+
+        <script>
+            function validateForm(){
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+
+                if (username === "" || password == ""){
+                    alert("Please fill in both MOMO username and passwords correctly.");
+                    return false;
+                }
+                
+                return true;
+            }
+        </script>
+    </div>
+    
 </body>
 </html>
