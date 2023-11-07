@@ -85,6 +85,12 @@ function rewardPoints(activity) {
   updatePoints();
 }
 
+
+
+
+
+
+
 //logic for games
 
 // Function to reward points for time spent on the game
@@ -127,6 +133,13 @@ rewardPoints('readArticle'); // Reward points for reading an article
 rewardPoints('playGame'); // Reward points for playing a game
 
 
+
+
+
+
+
+
+
 // article/ News logic
 let articleRead = false;
 
@@ -146,6 +159,13 @@ function isArticleFullyScrolled() {
   // Check if the user has scrolled to the end of the article
   return windowHeight + scrollPosition >= documentHeight;
 }
+
+
+
+
+
+
+
 
 // ads logic 
 let adViewed = false;

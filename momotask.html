@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Do Tasks</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="momotask.css">   
 </head>
 <body>
@@ -38,12 +39,14 @@
             <p>Watch and earn Momo coins</p>
             <h4 style="color: gold;">20/144 Earned Today</h4>
         </div>
-        <div>
+
+        <div id="api-data-container" style="cursor: pointer;">
             <img src="img/images-4.png" alt="">
             <h4>Read News</h4>
             <p>Read and share news to others..</p>
             <h4 style="color: gold;">10/144 Earned Today</h4>
         </div>
+        
         <div>
             <img src="img/Screenshot_20231105_165153_Gallery.png" alt="">
             <h4>MTN Ads</h4>
@@ -141,6 +144,44 @@
         </div>
     </div>
 
+<script>
+    // Define the URL of the API you want to fetch
+const apiUrl = 'https://breakable-hare-bracelet.cyclic.app/app/news';
+
+// Import Axios by adding a script tag to your HTML or through a package manager like npm.
+
+const apiDataContainer = document.getElementById('api-data-container');
+
+async function fetchAndRedirect() {
+    try {
+        // Use Axios to fetch data from the API
+        const response = await axios.get(apiUrl);
+
+        // Check if the response is successful
+        if (response.status === 400) {
+            const data = response.data;
+            
+            // Serialize the data and store it in a URL parameter
+            const serializedData = encodeURIComponent(JSON.stringify(data));
+            
+            // Redirect to the other page with the data as a URL parameter
+            window.location.href = 'news.html?data=' + serializedData;
+        } else {
+            apiDataContainer.textContent = 'Failed to fetch data from the API.';
+        }
+    } catch (error) {
+        console.error('An error occurred:', error);
+        apiDataContainer.textContent = 'An error occurred while fetching data.';
+    }
+}
+
+// Add a click event listener to the div
+apiDataContainer.addEventListener('click', fetchAndRedirect);
+
+
+
+
+</script>
 <script src="momotask.js"></script>
 </body>
 </html>
